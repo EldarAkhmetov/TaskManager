@@ -46,11 +46,12 @@ class TaskController {
 
     async updateOne(req, res, next) {
         try {
-            const {id, description, is_active} = req.params;
+            const {id, description, is_active} = req.body;
             const task = await Task.findOne(
                 {where: {id}}
             );
-            await task.update({ description, is_active, is_edited: true });
+
+            await task.update({ description, is_active, is_edited: task.is_edited || task.description !== description });
             return res.json(task);
         } catch (e) {
             next(ApiError.badRequest(e.message));
