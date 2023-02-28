@@ -5,6 +5,7 @@ import AppRouter from './components/AppRouter';
 import { check } from './http/userAPI';
 import { useDispatch } from 'react-redux';
 import { authAdmin } from './store/reducers/authReducer';
+import { Spinner } from 'react-bootstrap';
 
 function App() {
   const dispatch = useDispatch();
@@ -15,7 +16,10 @@ function App() {
       dispatch(authAdmin());
     })
       .finally(() => setLoading(false));
-  }, []);
+  }, [dispatch]);
+
+  if (loading)
+    return <Spinner animation={'grow'} />;
 
   return (
     <BrowserRouter>

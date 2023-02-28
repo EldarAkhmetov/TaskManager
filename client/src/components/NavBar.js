@@ -42,10 +42,10 @@ const NavBar = () => {
                 Sort By Email DESC
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item active={sortByStatus==='ASC'} onClick={() => { dispatch(setSortByStatus('ASC')); }}>
+              <NavDropdown.Item active={sortByStatus==='DESC'} onClick={() => { dispatch(setSortByStatus('DESC')); }}>
                 Sort By Status ASC
               </NavDropdown.Item>
-              <NavDropdown.Item active={sortByStatus==='DESC'} onClick={() => { dispatch(setSortByStatus('DESC')); }}>
+              <NavDropdown.Item active={sortByStatus==='ASC'} onClick={() => { dispatch(setSortByStatus('ASC')); }}>
                 Sort By Status DESC
               </NavDropdown.Item>
             </NavDropdown>
