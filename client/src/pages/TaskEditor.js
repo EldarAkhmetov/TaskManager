@@ -23,9 +23,12 @@ const TaskEditor = () => {
         setEmail(data.email);
         setDescription(data.description);
         setIsCompleted(!data.is_active);
-      });
+      })
+        .catch(() => {
+          history(TASKS_ROUTE);
+        });
     }
-  }, [params.id]);
+  }, [params.id, history]);
 
   const onTaskSubmit = async (e) => {
     e.preventDefault();
@@ -81,7 +84,7 @@ const TaskEditor = () => {
             <Button
               className="mt-3 btn-dark align-self-end"
               type="submit">
-              {params.id ? 'Edit Task' : 'Create Task'}
+              {params.id ? 'Update Task' : 'Create Task'}
             </Button>
           </Form>
         
