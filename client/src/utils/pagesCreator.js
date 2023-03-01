@@ -1,13 +1,14 @@
 export function createPages(pages, pagesCount, currentPage) {
-  if(pagesCount > 6) {
-    if(currentPage > 3) {
-      for (let i = currentPage - 2; i <= currentPage + 3; i++) {
+  const pagesLimit = 6;
+  if(pagesCount > pagesLimit) {
+    if(currentPage > pagesLimit / 2) {
+      for (let i = currentPage - (pagesLimit / 2 - 1); i <= currentPage + (pagesLimit / 2); i++) {
         pages.push(i);
         if(i === pagesCount) break;
       }
     }
     else {
-      for (let i = 1; i <= 6; i++) {
+      for (let i = 1; i <= pagesLimit / 2; i++) {
         pages.push(i);
         if(i === pagesCount) break;
       }
