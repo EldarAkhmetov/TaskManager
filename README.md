@@ -1,2 +1,2 @@
 # TaskManager
-https://task-manager-client-800d8yfvl-eldarakhmetov.vercel.app/
+https://task-manager-client-e7rlw6c8s-eldarakhmetov.vercel.app/
