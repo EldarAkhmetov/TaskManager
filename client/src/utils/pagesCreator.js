@@ -8,7 +8,7 @@ export function createPages(pages, pagesCount, currentPage) {
       }
     }
     else {
-      for (let i = 1; i <= pagesLimit / 2; i++) {
+      for (let i = 1; i <= pagesLimit; i++) {
         pages.push(i);
         if(i === pagesCount) break;
       }
