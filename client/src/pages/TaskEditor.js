@@ -28,7 +28,8 @@ const TaskEditor = () => {
           history(TASKS_ROUTE);
         });
     }
-  }, [params.id, history]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params.id]);
 
   const onTaskSubmit = async (e) => {
     e.preventDefault();
